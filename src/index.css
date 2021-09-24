@@ -1,4 +1,7 @@
-@tailwind base;
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+
+@ailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -16,4 +19,30 @@ body {
 		'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.work-sans {
+	font-family: 'Work Sans';
+	font-weight: 400;
+}
+.work-sans-light {
+	font-family: 'Work Sans';
+	font-weight: 300;
+}
+.work-sans-bold {
+	font-family: 'Work Sans';
+	font-weight: 500;
+}
+
+.nunito {
+	font-family: 'Nunito';
+	font-weight: 400;
+}
+.nunito-light {
+	font-family: 'Nunito';
+	font-weight: 300;
+}
+.nunito-bold {
+	font-family: 'Nunito';
+	font-weight: 500;
 }
