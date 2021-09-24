@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import AppNav from './components/AppNav';
+import TodoTypeSelector from './components/TodoTypeSelector';
 // import ProgressText from './components/ProgressText';
 import Todo from './components/Todo';
 import './App.css';
@@ -31,6 +32,8 @@ function App() {
 	return (
 		<div className="App">
 			<AppNav />
+			<TodoTypeSelector activeViewType={viewType} />
+
 			<div className="todos" data-testid="todos-container">
 				{todos.length ? renderTodos(viewType) : 'Nothing left to do'}
 			</div>
