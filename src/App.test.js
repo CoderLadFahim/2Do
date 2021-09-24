@@ -53,3 +53,55 @@ describe('the testing the behaviour of todosContainer', () => {
 		expect(currentText).toBe(expectedText);
 	});
 });
+
+describe('the TodoTypeSelector functionality', () => {
+	it('renders all todos initially', () => {
+		render(
+			<Provider store={store}>
+				<App />
+			</Provider>
+		);
+
+		const inputEl = screen.getByPlaceholderText('Add Todo');
+		const addBtn = screen.getByText('Add');
+		// adding 4 todo items
+		[
+			'Do the dishes',
+			'Hug your mum',
+			'Take out the trash',
+			'Establish neo-marxist communism',
+		].forEach((todoText) => {
+			fireEvent.change(inputEl, { target: { value: todoText } });
+			fireEvent.click(addBtn);
+		});
+
+		const todos = screen.getAllByTestId('todo');
+	});
+
+	// it('shows only completed todos', () => {
+	// 	render(
+	// 		<Provider store={store}>
+	// 			<App />
+	// 		</Provider>
+	// 	);
+
+	// 	const inputEl = screen.getByPlaceholderText('Add Todo');
+	// 	const addBtn = screen.getByText('Add');
+	// 	const todosContainer = screen.getByTestId('todos-container');
+	// 	// adding 4 todo items
+	// 	[
+	// 		'Do the dishes',
+	// 		'Hug your mum',
+	// 		'Take out the trash',
+	// 		'Establish neo-marxist communism',
+	// 	].forEach((todoText) => {
+	// 		fireEvent.change(inputEl, { target: { value: todoText } });
+	// 		fireEvent.click(addBtn);
+	// 	});
+
+	// 	const doneSelector = screen.getByText('Done');
+	// 	fireEvent.click(doneSelector);
+
+	// 	expect(todosContainer.length).toBe(0);
+	// });
+});

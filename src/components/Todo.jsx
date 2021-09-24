@@ -12,7 +12,10 @@ function Todo({ todo }) {
 	const todoStateChanger = () => dispatch(changeTodoState(todo.id));
 
 	return (
-		<div className="todo">
+		<div
+			data-testid="todo"
+			className={`todo ${todo.isCompleted ? 'done' : 'left'}`}
+		>
 			<p>{todo.text}</p>
 			<FontAwesomeIcon
 				icon={todo.isCompleted ? faRedoAlt : faCheck}
