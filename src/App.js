@@ -1,8 +1,12 @@
-import logo from './logo.svg';
+import AppNav from './components/AppNav';
 import './App.css';
 
 function App() {
-	return <div className="App">Bismillah 2do</div>;
+	return (
+		<div className="App">
+			<AppNav />
+		</div>
+	);
 }
 
 export default App;
