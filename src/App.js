@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import AppNav from './components/AppNav';
 // import ProgressText from './components/ProgressText';
@@ -6,14 +7,32 @@ import './App.css';
 
 function App() {
 	const todos = useSelector((state) => state.todos.todos);
+	const [viewType, setViewType] = useState('all');
+
+	const renderTodos = (type) => {
+		switch (type) {
+			case 'all':
+				return todos.map((todo) => <Todo todo={todo} key={todo.id} />);
+				break;
+			case 'done':
+				return todos.map(
+					(todo) => todo.isCompleted && <Todo todo={todo} key={todo.id} />
+				);
+				break;
+			case 'left':
+				return todos.map(
+					(todo) => !todo.isCompleted && <Todo todo={todo} key={todo.id} />
+				);
+			default:
+				return 'Something went wrong';
+		}
+	};
 
 	return (
 		<div className="App">
 			<AppNav />
 			<div className="todos" data-testid="todos-container">
-				{todos.length
-					? todos.map((todo) => <Todo todo={todo} key={todo.id} />)
-					: 'Nothing left to do'}
+				{todos.length ? renderTodos(viewType) : 'Nothing left to do'}
 			</div>
 		</div>
 	);
