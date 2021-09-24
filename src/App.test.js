@@ -1,10 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 
-describe('Testing the behaviour of todosContainer', () => {
-	it('Checks if initially todosContainer is empty', () => {
+describe('the testing the behaviour of todosContainer', () => {
+	it('should render an empty message initially', () => {
 		render(
 			<Provider store={store}>
 				<App />
