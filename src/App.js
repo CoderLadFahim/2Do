@@ -27,6 +27,36 @@ function App() {
 		}
 	};
 
+	const generateProgressStatusText = () => {
+		const numOfCompletedTodos = todos.filter(
+			(todo) => todo.isCompleted
+		).length;
+		const numOfTodos = todos.length;
+		const numOfIncompleteTodos = numOfTodos - numOfCompletedTodos;
+
+		if (numOfIncompleteTodos === 0) return;
+
+		if (viewType === 'all')
+			return (
+				<h2>
+					<span>{numOfCompletedTodos}</span> out of{' '}
+					<span>{numOfTodos}</span> todos done
+				</h2>
+			);
+		if (viewType === 'done')
+			return (
+				<h2>
+					<span>{numOfCompletedTodos}</span> todos done
+				</h2>
+			);
+		if (viewType === 'left')
+			return (
+				<h2>
+					<span>{numOfIncompleteTodos}</span> todos left
+				</h2>
+			);
+	};
+
 	return (
 		<div className="App">
 			<AppNav />
@@ -34,6 +64,8 @@ function App() {
 				activeViewType={viewType}
 				viewTypeUpdater={(newType) => setViewType(newType)}
 			/>
+
+			{todos.length ? generateProgressStatusText(viewType) : ''}
 
 			<div className="todos" data-testid="todos-container">
 				{todos.length ? renderTodos(viewType) : 'Nothing left to do'}

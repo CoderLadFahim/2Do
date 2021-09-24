@@ -12,10 +12,10 @@ describe('the testing the behaviour of todosContainer', () => {
 		);
 
 		const todosContainer = screen.getByTestId('todos-container');
-		const expectedText = 'Nothing left to do';
+		const expectedText = 'No todos left';
 		const currentText = todosContainer.textContent;
 
-		expect(currentText).toBe(expectedText);
+		expect(currentText).toBe('Nothing left to do');
 	});
 
 	it('should render todos with the given value from input', () => {
