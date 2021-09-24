@@ -8,10 +8,13 @@ function AppNav() {
 
 	const todoAdder = () => {
 		if (!todo) return;
-		const todoObj = { text: todo, id: Date.now() };
+		// exiting the function if every character in todo is a number and resetting the input value
+		if (todo.split('').every((ch) => typeof +ch === 'number' && !isNaN(+ch)))
+			return setTodo('');
+
+		const todoObj = { text: todo, id: Date.now(), isCompleted: false };
 		dispatch(addTodo(todoObj));
 
-		// setting input value to be en emtpy string after user adds a todo
 		setTodo('');
 	};
 
@@ -26,6 +29,7 @@ function AppNav() {
 				value={todo}
 				placeholder="Add Todo"
 				onChange={(e) => setTodo(e.target.value)}
+				// Firing the todoAdder function if input value is truthy and user presses enter
 				onKeyUp={(e) =>
 					e.target.value && e.keyCode === 13 ? todoAdder() : ''
 				}
