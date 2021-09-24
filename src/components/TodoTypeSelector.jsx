@@ -1,6 +1,6 @@
-function TodoTypeSelector(params) {
+function TodoTypeSelector({ activeViewType, viewTypeUpdater }) {
 	return (
-		<ul>
+		<ul onClick={(e) => viewTypeUpdater(e.target.textContent.toLowerCase())}>
 			<li>All</li>
 			<li>Done</li>
 			<li>Left</li>

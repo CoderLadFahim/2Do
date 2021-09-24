@@ -14,12 +14,10 @@ function App() {
 		switch (type) {
 			case 'all':
 				return todos.map((todo) => <Todo todo={todo} key={todo.id} />);
-				break;
 			case 'done':
 				return todos.map(
 					(todo) => todo.isCompleted && <Todo todo={todo} key={todo.id} />
 				);
-				break;
 			case 'left':
 				return todos.map(
 					(todo) => !todo.isCompleted && <Todo todo={todo} key={todo.id} />
@@ -32,7 +30,10 @@ function App() {
 	return (
 		<div className="App">
 			<AppNav />
-			<TodoTypeSelector activeViewType={viewType} />
+			<TodoTypeSelector
+				activeViewType={viewType}
+				viewTypeUpdater={(newType) => setViewType(newType)}
+			/>
 
 			<div className="todos" data-testid="todos-container">
 				{todos.length ? renderTodos(viewType) : 'Nothing left to do'}

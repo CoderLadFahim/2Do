@@ -13,7 +13,7 @@ function Todo({ todo }) {
 
 	return (
 		<div className="todo">
-			<p role="todo-text">{todo.text}</p>
+			<p>{todo.text}</p>
 			<FontAwesomeIcon
 				icon={todo.isCompleted ? faRedoAlt : faCheck}
 				onClick={todoStateChanger}
