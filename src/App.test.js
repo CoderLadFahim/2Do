@@ -1,8 +1,20 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import { store } from './app/store';
+import { Provider } from 'react-redux';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('Testing the behaviour of todosContainer', () => {
+	it('Checks if initially todosContainer is empty', () => {
+		render(
+			<Provider store={store}>
+				<App />
+			</Provider>
+		);
+
+		const todosContainer = screen.getByTestId('todos-container');
+		const expectedText = 'Nothing left to do';
+		const currentText = todosContainer.textContent;
+
+		expect(currentText).toBe(expectedText);
+	});
 });

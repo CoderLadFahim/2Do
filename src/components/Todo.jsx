@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Todo({ todo }) {
 	return (
 		<div className="todo">
-			<p>TODO_TEXT</p>
+			<p>{todo.text}</p>
 			<FontAwesomeIcon icon={todo.isCompleted ? faRedoAlt : faCheck} />
 			<FontAwesomeIcon icon={faTrash} />
 		</div>
