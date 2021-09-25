@@ -19,12 +19,15 @@ function AppNav() {
 	};
 
 	return (
-		<nav>
-			<button className="clear-btn" onClick={() => dispatch(clearTodos())}>
+		<nav className="container text-center mt-4 flex gap-2 justify-center">
+			<button
+				className="clear-btn p-2 rounded text-white nunito-bold outline-none bg-gray-300 text-gray-800  border-none"
+				onClick={() => dispatch(clearTodos())}
+			>
 				Clear
 			</button>
 			<input
-				className="text-center"
+				className="text-center w-4/6 sm:w-1/2  bg-gray-500 text-white font-bold  rounded-md shadow text-base work-sans-bold outline-none"
 				type="text"
 				value={todo}
 				placeholder="Add Todo"
@@ -34,7 +37,10 @@ function AppNav() {
 					e.target.value && e.keyCode === 13 ? todoAdder() : ''
 				}
 			/>
-			<button className="add-btn" onClick={todoAdder}>
+			<button
+				className="add-btn p-2 rounded text-white nunito-bold outline-none bg-green-400 border-none"
+				onClick={todoAdder}
+			>
 				Add
 			</button>
 		</nav>
