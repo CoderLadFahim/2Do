@@ -59,13 +59,12 @@ function App() {
 
 	return (
 		<div className="App">
-			<AppNav />
-			<TodoTypeSelector
+			<AppNav
 				activeViewType={viewType}
 				viewTypeUpdater={(newType) => setViewType(newType)}
+				progressStatusTextGenerator={generateProgressStatusText}
+				todosLength={todos.length}
 			/>
-
-			{todos.length ? generateProgressStatusText(viewType) : ''}
 
 			<div className="todos" data-testid="todos-container">
 				{todos.length ? renderTodos(viewType) : 'Nothing left to do'}
