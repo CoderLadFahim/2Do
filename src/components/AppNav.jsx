@@ -51,6 +51,12 @@ function AppNav({
 					Add
 				</button>
 			</div>
+			<TodoTypeSelector
+				activeViewType={activeViewType}
+				viewTypeUpdater={viewTypeUpdater}
+			/>
+
+			{todosLength ? progressStatusTextGenerator(activeViewType) : ''}
 		</nav>
 	);
 }

@@ -11,6 +11,7 @@ function App() {
 	const [viewType, setViewType] = useState('all');
 
 	const renderTodos = (type) => {
+		console.log(type);
 		switch (type) {
 			case 'all':
 				return todos.map((todo) => <Todo todo={todo} key={todo.id} />);
@@ -65,12 +66,6 @@ function App() {
 				progressStatusTextGenerator={generateProgressStatusText}
 				todosLength={todos.length}
 			/>
-			<TodoTypeSelector
-				activeViewType={viewType}
-				viewTypeUpdater={(newType) => setViewType(newType)}
-			/>
-
-			{todos.length ? generateProgressStatusText(viewType) : ''}
 
 			<div className="todos" data-testid="todos-container">
 				{todos.length ? renderTodos(viewType) : 'Nothing left to do'}
