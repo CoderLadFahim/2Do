@@ -25,7 +25,7 @@ function AppNav({
 	};
 
 	return (
-		<nav>
+		<nav className="flex flex-col items-center">
 			<div className="container text-center mt-4 flex gap-2 justify-center">
 				<button
 					className="clear-btn p-2 rounded text-white nunito-bold outline-none bg-gray-300 text-gray-800  border-none"
@@ -51,13 +51,6 @@ function AppNav({
 					Add
 				</button>
 			</div>
-
-			<TodoTypeSelector
-				activeViewType={activeViewType}
-				viewTypeUpdater={viewTypeUpdater}
-			/>
-
-			{todosLength ? progressStatusTextGenerator(activeViewType) : ''}
 		</nav>
 	);
 }
