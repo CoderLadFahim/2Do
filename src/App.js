@@ -36,21 +36,23 @@ function App() {
 
 		if (viewType === 'all')
 			return (
-				<h2>
-					<span>{numOfCompletedTodos}</span> out of{' '}
-					<span>{numOfTodos}</span> todos done
+				<h2 className="text-gray-50 nunito-bold font-bold  text-lg">
+					<span className="text-green-400">{numOfCompletedTodos}</span> out
+					of <span className="text-blue-400">{numOfTodos}</span> todos done
 				</h2>
 			);
 		if (viewType === 'done')
 			return (
-				<h2>
-					<span>{numOfCompletedTodos}</span> todos done
+				<h2 className="text-gray-50 nunito-bold font-bold  text-lg">
+					<span className="text-green-400">{numOfCompletedTodos}</span>{' '}
+					todos done
 				</h2>
 			);
 		if (viewType === 'left')
 			return (
-				<h2>
-					<span>{numOfIncompleteTodos}</span> todos left
+				<h2 className="text-gray-50 nunito-bold font-bold  text-lg">
+					<span className="text-red-400">{numOfIncompleteTodos}</span>{' '}
+					todos left
 				</h2>
 			);
 	};
