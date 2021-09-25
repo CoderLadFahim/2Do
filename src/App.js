@@ -66,8 +66,14 @@ function App() {
 				todosLength={todos.length}
 			/>
 
-			<div className="todos" data-testid="todos-container">
-				{todos.length ? renderTodos(viewType) : 'Nothing left to do'}
+			<div className="todos text-center" data-testid="todos-container">
+				{todos.length ? (
+					renderTodos(viewType)
+				) : (
+					<span className="text-center text-gray-300 block pt-20">
+						Nothing left to do
+					</span>
+				)}
 			</div>
 		</div>
 	);
