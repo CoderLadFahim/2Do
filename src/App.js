@@ -59,7 +59,12 @@ function App() {
 
 	return (
 		<div className="App">
-			<AppNav />
+			<AppNav
+				activeViewType={viewType}
+				viewTypeUpdater={(newType) => setViewType(newType)}
+				progressStatusTextGenerator={generateProgressStatusText}
+				todosLength={todos.length}
+			/>
 			<TodoTypeSelector
 				activeViewType={viewType}
 				viewTypeUpdater={(newType) => setViewType(newType)}

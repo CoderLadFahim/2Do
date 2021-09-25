@@ -1,8 +1,14 @@
 import { useDispatch } from 'react-redux';
 import { addTodo, clearTodos } from '../features/todos/todosSlice';
 import { useState } from 'react';
+import TodoTypeSelector from './TodoTypeSelector';
 
-function AppNav() {
+function AppNav({
+	activeViewType,
+	viewTypeUpdater,
+	progressStatusTextGenerator,
+	todosLength,
+}) {
 	const dispatch = useDispatch();
 	const [todo, setTodo] = useState('');
 
@@ -19,30 +25,39 @@ function AppNav() {
 	};
 
 	return (
-		<nav className="container text-center mt-4 flex gap-2 justify-center">
-			<button
-				className="clear-btn p-2 rounded text-white nunito-bold outline-none bg-gray-300 text-gray-800  border-none"
-				onClick={() => dispatch(clearTodos())}
-			>
-				Clear
-			</button>
-			<input
-				className="text-center w-4/6 sm:w-1/2  bg-gray-500 text-white font-bold  rounded-md shadow text-base work-sans-bold outline-none"
-				type="text"
-				value={todo}
-				placeholder="Add Todo"
-				onChange={(e) => setTodo(e.target.value)}
-				// Firing the todoAdder function if input value is truthy and user presses enter
-				onKeyUp={(e) =>
-					e.target.value && e.keyCode === 13 ? todoAdder() : ''
-				}
+		<nav>
+			<div className="container text-center mt-4 flex gap-2 justify-center">
+				<button
+					className="clear-btn p-2 rounded text-white nunito-bold outline-none bg-gray-300 text-gray-800  border-none"
+					onClick={() => dispatch(clearTodos())}
+				>
+					Clear
+				</button>
+				<input
+					className="text-center w-4/6 sm:w-1/2  bg-gray-500 text-white font-bold  rounded-md shadow text-base work-sans-bold outline-none"
+					type="text"
+					value={todo}
+					placeholder="Add Todo"
+					onChange={(e) => setTodo(e.target.value)}
+					// Firing the todoAdder function if input value is truthy and user presses enter
+					onKeyUp={(e) =>
+						e.target.value && e.keyCode === 13 ? todoAdder() : ''
+					}
+				/>
+				<button
+					className="add-btn p-2 rounded text-white nunito-bold outline-none bg-green-400 border-none"
+					onClick={todoAdder}
+				>
+					Add
+				</button>
+			</div>
+
+			<TodoTypeSelector
+				activeViewType={activeViewType}
+				viewTypeUpdater={viewTypeUpdater}
 			/>
-			<button
-				className="add-btn p-2 rounded text-white nunito-bold outline-none bg-green-400 border-none"
-				onClick={todoAdder}
-			>
-				Add
-			</button>
+
+			{todosLength ? progressStatusTextGenerator(activeViewType) : ''}
 		</nav>
 	);
 }
