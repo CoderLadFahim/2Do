@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import AppNav from './components/AppNav';
-import TodoTypeSelector from './components/TodoTypeSelector';
-// import ProgressText from './components/ProgressText';
 import Todo from './components/Todo';
 import './App.css';
 
@@ -11,7 +9,6 @@ function App() {
 	const [viewType, setViewType] = useState('all');
 
 	const renderTodos = (type) => {
-		console.log(type);
 		switch (type) {
 			case 'all':
 				return todos.map((todo) => <Todo todo={todo} key={todo.id} />);
