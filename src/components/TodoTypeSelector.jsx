@@ -3,8 +3,8 @@ function TodoTypeSelector({ activeViewType, viewTypeUpdater }) {
 
 	return (
 		<ul
-			className="flex list-none w-4/6  bg-gray-700 nunito rounded-lg shadow-md sm:w-1/3 mb-3 xl:mb-4 
-			overflow-hidden"
+			className="flex list-none w-4/6 bg-gray-700 nunito rounded-lg shadow-md sm:w-1/2 mb-4 sm:mb-5 xl:w-1/4
+		overflow-hidden"
 			data-testid="type-selector"
 		>
 			<li

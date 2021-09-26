@@ -25,8 +25,8 @@ function AppNav({
 	};
 
 	return (
-		<nav className="flex flex-col items-center xl:flex-row justify-between">
-			<div className="container text-center mt-4 flex gap-2 items-baseline justify-center mb-3 xl:mb-5">
+		<nav className="flex flex-col items-center">
+			<div className="text-center mt-4 flex gap-2 sm:w-5/6  items-baseline justify-center mb-4 sm:mb-5">
 				<button
 					className="clear-btn p-2 rounded text-white nunito-bold outline-none bg-gray-300 text-gray-800  border-none"
 					onClick={() => dispatch(clearTodos())}
@@ -34,7 +34,7 @@ function AppNav({
 					Clear
 				</button>
 				<input
-					className="text-center py-1 w-4/6 sm:w-1/2 xl:w-1/3  bg-gray-500 text-white font-bold  rounded-md shadow text-base work-sans-bold outline-none"
+					className="text-center py-1 w-4/6 sm:w-4/6 xl:w-1/3  bg-gray-500 text-white font-bold  rounded-md shadow text-base work-sans-bold outline-none"
 					type="text"
 					value={todo}
 					placeholder="Add Todo"

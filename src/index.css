@@ -48,5 +48,5 @@ body {
 }
 
 .container {
-	@apply w-10/12 border border-2 border-red-200;
+	@apply w-10/12;
 }
