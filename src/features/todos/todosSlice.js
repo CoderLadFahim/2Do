@@ -1,7 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-	todos: [],
+	todos: [
+		{ text: 'Take out the trash', id: 1, isCompleted: false },
+		{ text: 'do the dishes', id: 2, isCompleted: false },
+		{ text: 'Hug your mum', id: 3, isCompleted: false },
+		{
+			text: 'Establish neo-marxist communism',
+			id: 4,
+			isCompleted: false,
+		},
+	],
 };
 
 export const todosSlice = createSlice({

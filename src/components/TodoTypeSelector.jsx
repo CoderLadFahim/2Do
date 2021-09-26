@@ -1,5 +1,5 @@
 function TodoTypeSelector({ activeViewType, viewTypeUpdater }) {
-	const selectorClasses = 'flex-1 text-center py-2 cursor-pointer';
+	const selectorClasses = 'flex-1 text-center py-2 cursor-pointer transition';
 
 	return (
 		<ul
