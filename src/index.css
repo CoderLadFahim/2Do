@@ -44,9 +44,21 @@ body {
 }
 .nunito-bold {
 	font-family: 'Nunito';
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .container {
 	@apply w-10/12;
+}
+
+.todo {
+	@apply flex w-80 my-0 mx-auto mb-3 transition p-2 rounded-md flex items-center;
+	font-family: 'Work Sans';
+	/* font-weight: 500; */
+}
+.done {
+	@apply bg-green-400 line-through;
+}
+.left {
+	@apply bg-red-400;
 }

@@ -66,7 +66,7 @@ function App() {
 				todosLength={todos.length}
 			/>
 
-			<div className="todos text-center" data-testid="todos-container">
+			<div className="container todos" data-testid="todos-container">
 				{todos.length ? (
 					renderTodos(viewType)
 				) : (

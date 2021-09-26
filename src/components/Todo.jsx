@@ -16,12 +16,14 @@ function Todo({ todo }) {
 			data-testid="todo"
 			className={`todo ${todo.isCompleted ? 'done' : 'left'}`}
 		>
-			<p>{todo.text}</p>
-			<FontAwesomeIcon
-				icon={todo.isCompleted ? faRedoAlt : faCheck}
-				onClick={todoStateChanger}
-			/>
-			<FontAwesomeIcon icon={faTrash} onClick={todoDeleter} />
+			<p className="w-3/4">{todo.text}</p>
+			<div className="w-1/4 flex items-center justify-around">
+				<FontAwesomeIcon
+					icon={todo.isCompleted ? faRedoAlt : faCheck}
+					onClick={todoStateChanger}
+				/>
+				<FontAwesomeIcon icon={faTrash} onClick={todoDeleter} />
+			</div>
 		</div>
 	);
 }
