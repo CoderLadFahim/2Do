@@ -67,7 +67,7 @@ function App() {
 			/>
 
 			<div
-				className="container mt-16 px-5 gap-y-3 bg-gray-900 flex flex-wrap items-start justify-between"
+				className="container mt-16 px-5 lg:px-24 xl:px-11 2xl:px-6 gap-y-3 flex flex-wrap items-start justify-between"
 				data-testid="todos-container"
 			>
 				{todos.length ? (
