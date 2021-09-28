@@ -78,6 +78,14 @@ function App() {
 					</span>
 				)}
 			</div>
+			<button
+				className="fixed bottom-1"
+				onClick={() => {
+					console.log('top');
+				}}
+			>
+				Top
+			</button>
 		</div>
 	);
 }
