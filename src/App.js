@@ -66,7 +66,10 @@ function App() {
 				todosLength={todos.length}
 			/>
 
-			<div className="container todos" data-testid="todos-container">
+			<div
+				className="container mt-16 px-5 gap-y-3 bg-gray-900 flex flex-wrap items-start justify-between"
+				data-testid="todos-container"
+			>
 				{todos.length ? (
 					renderTodos(viewType)
 				) : (

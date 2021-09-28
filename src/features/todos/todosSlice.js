@@ -5,6 +5,7 @@ const initialState = {
 		{ text: 'Take out the trash', id: 1, isCompleted: false },
 		{ text: 'do the dishes', id: 2, isCompleted: false },
 		{ text: 'Hug your mum', id: 3, isCompleted: false },
+		{ text: 'Wash the Car', id: 5, isCompleted: false },
 		{
 			text: 'Establish neo-marxist communism',
 			id: 4,
