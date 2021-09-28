@@ -73,7 +73,7 @@ function App() {
 				{todos.length ? (
 					renderTodos(viewType)
 				) : (
-					<span className="text-center text-gray-300 block pt-20">
+					<span className="text-center block my-0 mx-auto text-gray-300 block pt-20">
 						Nothing left to do
 					</span>
 				)}

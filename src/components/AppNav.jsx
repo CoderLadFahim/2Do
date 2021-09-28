@@ -28,7 +28,7 @@ function AppNav({
 		<nav className="flex flex-col items-center">
 			<div className="text-center mt-4 flex gap-2 sm:w-5/6  items-baseline justify-center mb-4 sm:mb-5">
 				<button
-					className="clear-btn p-2 rounded text-white nunito-bold outline-none bg-gray-300 text-gray-800  border-none"
+					className="clear-btn p-2 rounded text-white nunito-bold outline-none bg-gray-300 text-gray-800 cursor-pointer  border-none transition  hover:bg-gray-200"
 					onClick={() => dispatch(clearTodos())}
 				>
 					Clear
@@ -45,7 +45,7 @@ function AppNav({
 					}
 				/>
 				<button
-					className="add-btn p-2 rounded text-white nunito-bold outline-none bg-green-400 border-none"
+					className="add-btn p-2 rounded text-white nunito-bold outline-none bg-green-400 border-none cursor-pointer  transition  hover:bg-green-300"
 					onClick={todoAdder}
 				>
 					Add
