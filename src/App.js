@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import AppNav from './components/AppNav';
 import Todo from './components/Todo';
@@ -32,7 +32,14 @@ function App() {
 		const numOfTodos = todos.length;
 		const numOfIncompleteTodos = numOfTodos - numOfCompletedTodos;
 
-		if (numOfIncompleteTodos === 0) return;
+		if (numOfIncompleteTodos === 0)
+			return (
+				<h2 className="text-gray-50 nunito-bold font-bold  text-lg">
+					<span className="text-green-300">
+						{viewType !== 'left' ? 'All todos done!' : 'None left'}
+					</span>
+				</h2>
+			);
 
 		if (viewType === 'all')
 			return (
@@ -67,7 +74,7 @@ function App() {
 			/>
 
 			<div
-				className="container mt-16 px-5 lg:px-24 xl:px-11 2xl:px-6 gap-y-3 flex flex-wrap items-start justify-between"
+				className="todos-container container mt-16 px-5 lg:px-24 xl:px-11 2xl:px-6 gap-y-3 flex flex-wrap items-start justify-between"
 				data-testid="todos-container"
 			>
 				{todos.length ? (

@@ -6,9 +6,7 @@ import { deleteTodo, changeTodoState } from '../features/todos/todosSlice';
 
 function Todo({ todo }) {
 	const dispatch = useDispatch();
-
 	const todoDeleter = () => dispatch(deleteTodo(todo.id));
-
 	const todoStateChanger = () => dispatch(changeTodoState(todo.id));
 
 	return (
@@ -19,10 +17,15 @@ function Todo({ todo }) {
 			<p className="w-3/4">{todo.text}</p>
 			<div className="w-1/4 flex items-center justify-around">
 				<FontAwesomeIcon
+					className="opacity-90  cursor-pointer hover:text-white hover:opacity-100 transition"
 					icon={todo.isCompleted ? faRedoAlt : faCheck}
 					onClick={todoStateChanger}
 				/>
-				<FontAwesomeIcon icon={faTrash} onClick={todoDeleter} />
+				<FontAwesomeIcon
+					className="opacity-90  cursor-pointer hover:text-white hover:opacity-100 transition"
+					icon={faTrash}
+					onClick={todoDeleter}
+				/>
 			</div>
 		</div>
 	);

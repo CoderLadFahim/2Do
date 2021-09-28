@@ -1,7 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-	todos: [],
+	todos: [
+		// { text: 'todo', id: Date.now(), isCompleted: false },
+		// { text: 'todo', id: Date.now(), isCompleted: false },
+		// { text: 'todo', id: Date.now(), isCompleted: false },
+		// { text: 'todo', id: Date.now(), isCompleted: false },
+		// { text: 'todo', id: Date.now(), isCompleted: false },
+		// { text: 'todo', id: Date.now(), isCompleted: false },
+		// { text: 'todo', id: Date.now(), isCompleted: false },
+		// { text: 'todo', id: Date.now(), isCompleted: false },
+		// { text: 'todo', id: Date.now(), isCompleted: false },
+		// { text: 'todo', id: Date.now(), isCompleted: false },
+		// { text: 'todo', id: Date.now(), isCompleted: false },
+		// { text: 'todo', id: Date.now(), isCompleted: false },
+	],
 };
 
 export const todosSlice = createSlice({

@@ -47,15 +47,24 @@ body {
 	font-weight: 600;
 }
 
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
 .container {
 	@apply w-10/12;
 }
 
 .todo {
-	/* @apply flex w-80 md:w-72 my-0 mx-auto mb-5 transition p-2 rounded-md flex items-center; */
 	@apply flex w-80 my-0 mx-auto md:m-0 md:w-72 transition p-2 rounded-md flex items-center;
 	font-family: 'Work Sans';
-	/* font-weight: 500; */
+	animation-name: fade-in;
+	animation-duration: 100ms;
 }
 .done {
 	@apply bg-green-400 line-through;
